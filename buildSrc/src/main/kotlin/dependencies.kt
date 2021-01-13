@@ -124,7 +124,7 @@ object deps {
       }
 
       object room {
-        private const val version = "2.3.0-alpha02"
+        private const val version = "2.3.0-SNAPSHOT"
         const val apt = "androidx.room:room-compiler:$version"
         const val ktx = "androidx.room:room-ktx:$version"
         const val runtime = "androidx.room:room-runtime:$version"
@@ -132,8 +132,8 @@ object deps {
       }
 
       object compose {
-        const val version = "1.0.0-alpha06"
-        const val uiTooling = "androidx.ui:ui-tooling:$version"
+        const val version = "1.0.0-alpha08"
+        const val uiTooling = "androidx.compose.ui:ui-tooling:$version"
         const val foundation = "androidx.compose.foundation:foundation:$version"
         const val material = "androidx.compose.material:material:$version"
         const val materialIcons = "androidx.compose.material:material-icons-core:$version"
@@ -226,6 +226,7 @@ object deps {
       const val kotlinx = "https://kotlin.bintray.com/kotlinx"
       const val plugins = "https://plugins.gradle.org/m2/"
       const val snapshots = "https://oss.sonatype.org/content/repositories/snapshots/"
+      const val androidx_snapshots = "https://androidx.dev/snapshots/builds/7079533/artifacts/repository"
     }
 
     const val javapoet = "com.squareup:javapoet:1.13.0"

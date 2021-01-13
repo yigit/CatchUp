@@ -14,6 +14,13 @@
  * limitations under the License.
  */
 
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+    }
+}
+
 plugins {
   id("com.gradle.enterprise") version "3.4.1"
 }

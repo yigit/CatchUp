@@ -24,6 +24,7 @@ plugins {
   kotlin("kapt")
   id("com.apollographql.apollo")
   id("licensesJsonGenerator")
+  id("com.google.devtools.ksp") version("1.4.20-dev-experimental-20210111")
 //  id("com.bugsnag.android.gradle")
 //  id("com.github.triplet.play")
 }
@@ -169,6 +170,10 @@ android {
 //    setEnabled("debug" !in name.toLowerCase(Locale.US))
 //  }
 //}
+
+ksp {
+  arg("room.schemaLocation", "$projectDir/schemas")
+}
 
 kapt {
   arguments {
@@ -399,7 +404,7 @@ dependencies {
   implementation(deps.android.androidx.room.runtime)
   implementation(deps.android.androidx.room.rxJava2)
   implementation(deps.android.androidx.room.ktx)
-  kapt(deps.android.androidx.room.apt)
+  ksp(deps.android.androidx.room.apt)
 
   // Compose
   implementation(project(":libraries:compose-extensions"))

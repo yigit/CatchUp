@@ -48,7 +48,7 @@ buildscript {
 plugins {
   id("com.github.ben-manes.versions") version "0.33.0"
   id("catchup")
-  id("com.osacky.doctor") version "0.6.2"
+  //id("com.osacky.doctor") version "0.6.2"
 }
 
 apply {
@@ -65,6 +65,7 @@ allprojects {
     maven(deps.build.repositories.kotlinx)
     maven(deps.build.repositories.jitpack)
     maven(deps.build.repositories.snapshots)
+    maven(deps.build.repositories.androidx_snapshots)
   }
 
   configurations.all {

@@ -23,7 +23,7 @@ import java.lang.reflect.Type
 /**
  * A [Converter] that only encodes requests with a given [convertBody].
  */
-class EncodingConverter<T> private constructor(
+class EncodingConverter<T:Any> private constructor(
   private val convertBody: (T) -> RequestBody
 ) : Converter<T, RequestBody> {
 
