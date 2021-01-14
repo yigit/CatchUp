@@ -226,7 +226,7 @@ object deps {
       const val kotlinx = "https://kotlin.bintray.com/kotlinx"
       const val plugins = "https://plugins.gradle.org/m2/"
       const val snapshots = "https://oss.sonatype.org/content/repositories/snapshots/"
-      const val androidx_snapshots = "https://androidx.dev/snapshots/builds/7079533/artifacts/repository"
+      const val androidx_snapshots = "file:///home/yboyar/src/androidx-main/frameworks/support/out/room-playground/dist/repository/" //"https://androidx.dev/snapshots/builds/7080624/artifacts/repository"
     }
 
     const val javapoet = "com.squareup:javapoet:1.13.0"

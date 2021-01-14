@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 5,
-    "identityHash": "82d6644ae73de282f394819293f56ca0",
+    "identityHash": "fa79432db8d74f182c757b2105424a01",
     "entities": [
       {
         "tableName": "pages",
@@ -62,53 +62,11 @@
       },
       {
         "tableName": "items",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `title` TEXT, `timestamp` INTEGER, `score` TEXT, `tag` TEXT, `author` TEXT, `source` TEXT, `itemClickUrl` TEXT, `detailKey` TEXT, `value` TEXT, `type` TEXT, `url` TEXT, `detailUrl` TEXT, `animatable` INTEGER, `sourceUrl` TEXT, `bestSize` TEXT, `imageId` TEXT, `text` TEXT, `textPrefix` TEXT, `icon` INTEGER, `clickUrl` TEXT, `iconTintColor` INTEGER, `formatTextAsCount` INTEGER, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`author` TEXT, `detailKey` TEXT, `id` INTEGER NOT NULL, `itemClickUrl` TEXT, `score` TEXT, `source` TEXT, `tag` TEXT, `timestamp` INTEGER, `title` TEXT NOT NULL, `animatable` INTEGER, `bestSize` TEXT, `detailUrl` TEXT, `imageId` TEXT, `sourceUrl` TEXT, `url` TEXT, `clickUrl` TEXT, `formatTextAsCount` INTEGER, `icon` INTEGER, `iconTintColor` INTEGER, `text` TEXT, `textPrefix` TEXT, `type` TEXT, `value` TEXT, PRIMARY KEY(`id`))",
         "fields": [
-          {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "title",
-            "columnName": "title",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "timestamp",
-            "columnName": "timestamp",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "score",
-            "columnName": "score",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "tag",
-            "columnName": "tag",
-            "affinity": "TEXT",
-            "notNull": false
-          },
           {
             "fieldPath": "author",
             "columnName": "author",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "source",
-            "columnName": "source",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "itemClickUrl",
-            "columnName": "itemClickUrl",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -119,20 +77,56 @@
             "notNull": false
           },
           {
-            "fieldPath": "summarizationInfo.value",
-            "columnName": "value",
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemClickUrl",
+            "columnName": "itemClickUrl",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "summarizationInfo.type",
-            "columnName": "type",
+            "fieldPath": "score",
+            "columnName": "score",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "imageInfo.url",
-            "columnName": "url",
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tag",
+            "columnName": "tag",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imageInfo.animatable",
+            "columnName": "animatable",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imageInfo.bestSize",
+            "columnName": "bestSize",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -143,9 +137,9 @@
             "notNull": false
           },
           {
-            "fieldPath": "imageInfo.animatable",
-            "columnName": "animatable",
-            "affinity": "INTEGER",
+            "fieldPath": "imageInfo.imageId",
+            "columnName": "imageId",
+            "affinity": "TEXT",
             "notNull": false
           },
           {
@@ -155,15 +149,33 @@
             "notNull": false
           },
           {
-            "fieldPath": "imageInfo.bestSize",
-            "columnName": "bestSize",
+            "fieldPath": "imageInfo.url",
+            "columnName": "url",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "imageInfo.imageId",
-            "columnName": "imageId",
+            "fieldPath": "mark.clickUrl",
+            "columnName": "clickUrl",
             "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mark.formatTextAsCount",
+            "columnName": "formatTextAsCount",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mark.icon",
+            "columnName": "icon",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mark.iconTintColor",
+            "columnName": "iconTintColor",
+            "affinity": "INTEGER",
             "notNull": false
           },
           {
@@ -179,27 +191,15 @@
             "notNull": false
           },
           {
-            "fieldPath": "mark.icon",
-            "columnName": "icon",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "mark.clickUrl",
-            "columnName": "clickUrl",
+            "fieldPath": "summarizationInfo.type",
+            "columnName": "type",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "mark.iconTintColor",
-            "columnName": "iconTintColor",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "mark.formatTextAsCount",
-            "columnName": "formatTextAsCount",
-            "affinity": "INTEGER",
+            "fieldPath": "summarizationInfo.value",
+            "columnName": "value",
+            "affinity": "TEXT",
             "notNull": false
           }
         ],
@@ -216,7 +216,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '82d6644ae73de282f394819293f56ca0')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fa79432db8d74f182c757b2105424a01')"
     ]
   }
 }
