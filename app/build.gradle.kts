@@ -404,7 +404,7 @@ dependencies {
   implementation(deps.android.androidx.room.runtime)
   implementation(deps.android.androidx.room.rxJava2)
   implementation(deps.android.androidx.room.ktx)
-  ksp(deps.android.androidx.room.apt)
+  kapt(deps.android.androidx.room.apt)
 
   // Compose
   implementation(project(":libraries:compose-extensions"))

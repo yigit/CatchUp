@@ -62,20 +62,8 @@
       },
       {
         "tableName": "items",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`author` TEXT, `detailKey` TEXT, `id` INTEGER NOT NULL, `itemClickUrl` TEXT, `score` TEXT, `source` TEXT, `tag` TEXT, `timestamp` INTEGER, `title` TEXT NOT NULL, `animatable` INTEGER, `bestSize` TEXT, `detailUrl` TEXT, `imageId` TEXT, `sourceUrl` TEXT, `url` TEXT, `clickUrl` TEXT, `formatTextAsCount` INTEGER, `icon` INTEGER, `iconTintColor` INTEGER, `text` TEXT, `textPrefix` TEXT, `type` TEXT, `value` TEXT, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `title` TEXT NOT NULL, `timestamp` INTEGER, `score` TEXT, `tag` TEXT, `author` TEXT, `source` TEXT, `itemClickUrl` TEXT, `detailKey` TEXT, `value` TEXT, `type` TEXT, `url` TEXT, `detailUrl` TEXT, `animatable` INTEGER, `sourceUrl` TEXT, `bestSize` TEXT, `imageId` TEXT, `text` TEXT, `textPrefix` TEXT, `icon` INTEGER, `clickUrl` TEXT, `iconTintColor` INTEGER, `formatTextAsCount` INTEGER, PRIMARY KEY(`id`))",
         "fields": [
-          {
-            "fieldPath": "author",
-            "columnName": "author",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "detailKey",
-            "columnName": "detailKey",
-            "affinity": "TEXT",
-            "notNull": false
-          },
           {
             "fieldPath": "id",
             "columnName": "id",
@@ -83,20 +71,20 @@
             "notNull": true
           },
           {
-            "fieldPath": "itemClickUrl",
-            "columnName": "itemClickUrl",
+            "fieldPath": "title",
+            "columnName": "title",
             "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
             "notNull": false
           },
           {
             "fieldPath": "score",
             "columnName": "score",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "source",
-            "columnName": "source",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -107,44 +95,38 @@
             "notNull": false
           },
           {
-            "fieldPath": "timestamp",
-            "columnName": "timestamp",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "title",
-            "columnName": "title",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "imageInfo.animatable",
-            "columnName": "animatable",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "imageInfo.bestSize",
-            "columnName": "bestSize",
+            "fieldPath": "author",
+            "columnName": "author",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "imageInfo.detailUrl",
-            "columnName": "detailUrl",
+            "fieldPath": "source",
+            "columnName": "source",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "imageInfo.imageId",
-            "columnName": "imageId",
+            "fieldPath": "itemClickUrl",
+            "columnName": "itemClickUrl",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "imageInfo.sourceUrl",
-            "columnName": "sourceUrl",
+            "fieldPath": "detailKey",
+            "columnName": "detailKey",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "summarizationInfo.value",
+            "columnName": "value",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "summarizationInfo.type",
+            "columnName": "type",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -155,27 +137,33 @@
             "notNull": false
           },
           {
-            "fieldPath": "mark.clickUrl",
-            "columnName": "clickUrl",
+            "fieldPath": "imageInfo.detailUrl",
+            "columnName": "detailUrl",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "mark.formatTextAsCount",
-            "columnName": "formatTextAsCount",
+            "fieldPath": "imageInfo.animatable",
+            "columnName": "animatable",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "mark.icon",
-            "columnName": "icon",
-            "affinity": "INTEGER",
+            "fieldPath": "imageInfo.sourceUrl",
+            "columnName": "sourceUrl",
+            "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "mark.iconTintColor",
-            "columnName": "iconTintColor",
-            "affinity": "INTEGER",
+            "fieldPath": "imageInfo.bestSize",
+            "columnName": "bestSize",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imageInfo.imageId",
+            "columnName": "imageId",
+            "affinity": "TEXT",
             "notNull": false
           },
           {
@@ -191,15 +179,27 @@
             "notNull": false
           },
           {
-            "fieldPath": "summarizationInfo.type",
-            "columnName": "type",
+            "fieldPath": "mark.icon",
+            "columnName": "icon",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mark.clickUrl",
+            "columnName": "clickUrl",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "summarizationInfo.value",
-            "columnName": "value",
-            "affinity": "TEXT",
+            "fieldPath": "mark.iconTintColor",
+            "columnName": "iconTintColor",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mark.formatTextAsCount",
+            "columnName": "formatTextAsCount",
+            "affinity": "INTEGER",
             "notNull": false
           }
         ],

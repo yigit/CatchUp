@@ -76,11 +76,11 @@ class OrderServicesActivity : InjectingBaseActivity() {
     layoutInflater.inflate(R.layout.activity_generic_container, viewGroup)
     syllabus.bind(this)
 
-    if (savedInstanceState == null) {
-      supportFragmentManager.commitNow {
-        add(R.id.fragment_container, OrderServicesFragment2())
-      }
-    }
+//    if (savedInstanceState == null) {
+//      supportFragmentManager.commitNow {
+//        //add(R.id.fragment_container, OrderServicesFragment2())
+//      }
+//    }
   }
 }
 
